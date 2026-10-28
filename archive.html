@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Archive 001 · Vuwani</title>
+<meta name="description" content="Every restored suit in the Vuwani archive, with its provenance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Big+Shoulders+Stencil+Display:wght@700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="brand/tokens.css">
+<link rel="stylesheet" href="brand/components.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="brand/logos/vuwani-wordmark-coal-transparent.png">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand-link" href="index.html"><b>VUWANI</b><span>Style Archive of South African Tailoring</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="archive.html" aria-current="page">Archive</a><a href="about.html">About</a><a href="https://substack.com">Journal</a><a href="about.html#fitting">Book a fitting</a></nav>
+  </div>
+</header>
+<main class="wrap section">
+  <div class="section-head">
+    <div>
+      <p class="eyebrow">The archive</p>
+      <h1 class="title">Archive 001</h1>
+      <p class="flourish">thirty suits, found in Joburg, restored by hand</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter by status">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All</button>
+      <button class="chip" type="button" data-filter="available" aria-pressed="false">Available</button>
+      <button class="chip" type="button" data-filter="reserved" aria-pressed="false">Reserved</button>
+      <button class="chip" type="button" data-filter="sold" aria-pressed="false">Gone home</button>
+    </div>
+  </div>
+  <hr class="vw-stitch" style="margin-bottom:var(--space-8)">
+  <div class="grid" id="archive"></div>
+  <p class="muted" id="empty" hidden>Nothing here yet. The next bale opens on Saturday.</p>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <b>VUWANI</b>
+      <p class="flourish" style="color:var(--bone)">Grown from grit. Tailored like royalty.</p>
+      <p><span class="vw-cuff" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
+    </div>
+    <div>
+      <p class="eyebrow">The archive</p>
+      <ul><li><a href="archive.html">Archive 001</a></li><li><a href="about.html">Why we built Vuwani</a></li><li><a href="about.html#fitting">Book a fitting</a></li></ul>
+    </div>
+    <div>
+      <p class="eyebrow">Find us</p>
+      <ul><li>Newtown, Johannesburg</li><li>By appointment</li><li class="note" style="color:var(--bone)">JEPPESTOWN · SELBY · BOOYSENS · NEWTOWN</li></ul>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/garments.js"></script>
+<script>
+  (function () {
+    var all = window.VUWANI_ARCHIVE.garments;
+    var grid = document.getElementById("archive");
+    var empty = document.getElementById("empty");
+    var chips = document.querySelectorAll("[data-filter]");
+    function show(f) {
+      var list = f === "all" ? all : all.filter(function (g) { return g.status === f; });
+      grid.innerHTML = list.map(function (g) { return window.VUWANI.card(g); }).join("");
+      empty.hidden = list.length > 0;
+      chips.forEach(function (c) { c.setAttribute("aria-pressed", String(c.dataset.filter === f)); });
+    }
+    chips.forEach(function (c) { c.addEventListener("click", function () { show(c.dataset.filter); }); });
+    show("all");
+  })();
+</script>
+</body>
+</html>

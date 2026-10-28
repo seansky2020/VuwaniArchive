@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Garment · Vuwani</title>
+<meta name="description" content="A restored garment from the Vuwani archive.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Big+Shoulders+Stencil+Display:wght@700;800&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="brand/tokens.css">
+<link rel="stylesheet" href="brand/components.css">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="brand/logos/vuwani-wordmark-coal-transparent.png">
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand-link" href="index.html"><b>VUWANI</b><span>Style Archive of South African Tailoring</span></a>
+    <nav class="site-nav" aria-label="Main"><a href="archive.html" aria-current="page">Archive</a><a href="about.html">About</a><a href="https://substack.com">Journal</a><a href="about.html#fitting">Book a fitting</a></nav>
+  </div>
+</header>
+<main class="wrap">
+  <p style="margin-top:var(--space-8)"><a class="back-link" href="archive.html">← Back to the archive</a></p>
+  <div class="garment" id="garment"></div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <b>VUWANI</b>
+      <p class="flourish" style="color:var(--bone)">Grown from grit. Tailored like royalty.</p>
+      <p><span class="vw-cuff" aria-hidden="true"><i></i><i></i><i></i><i></i></span></p>
+    </div>
+    <div>
+      <p class="eyebrow">The archive</p>
+      <ul><li><a href="archive.html">Archive 001</a></li><li><a href="about.html">Why we built Vuwani</a></li><li><a href="about.html#fitting">Book a fitting</a></li></ul>
+    </div>
+    <div>
+      <p class="eyebrow">Find us</p>
+      <ul><li>Newtown, Johannesburg</li><li>By appointment</li><li class="note" style="color:var(--bone)">JEPPESTOWN · SELBY · BOOYSENS · NEWTOWN</li></ul>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/garments.js"></script>
+<script>
+  (function () {
+    var V = window.VUWANI, e = V.esc;
+    var id = new URLSearchParams(location.search).get("id");
+    var g = window.VUWANI_ARCHIVE.garments.find(function (x) { return x.id === id; });
+    var root = document.getElementById("garment");
+    if (!g) {
+      root.innerHTML = '<div><h1 class="title">We could not find that garment.</h1><p>It may have been renumbered. <a href="archive.html">Browse the archive</a> instead.</p></div>';
+      return;
+    }
+    document.title = g.name + " · Vuwani";
+    var plates = [
+      ["PLATE I", "FULL LENGTH"], ["PLATE II", "THE LINING"], ["PLATE III", "THE CUFF"]
+    ].map(function (p, i) {
+      return V.plate(g, '<figcaption><b>' + p[0] + '</b><span>' + p[1] + '</span></figcaption>', i);
+    }).join("");
+    var rows = [["Era", g.era], ["Cloth", g.cloth], ["Found", g.found], ["Work done", g.work], ["Chest", g.chest], ["Waist", g.waist]]
+      .filter(function (r) { return r[1]; })
+      .map(function (r) { return "<dt>" + r[0] + "</dt><dd>" + e(r[1]) + "</dd>"; }).join("");
+    var ledger = g.ledger.map(function (l) { return "<tr><td>" + e(l[0]) + "</td><td>" + e(l[1]) + "</td></tr>"; }).join("") +
+      (g.status === "sold" ? "" : "<tr><td>&nbsp;</td><td></td></tr>");
+    var action = g.status === "available"
+      ? '<a class="vw-btn vw-btn-primary" href="about.html#fitting">Reserve this suit</a>'
+      : '<button class="vw-btn vw-btn-primary" disabled>' + (g.status === "sold" ? "Gone home" : "Reserved") + "</button>";
+    var stamp = g.status === "sold" ? '<span class="vw-stamp vw-stamp-sold">Sold</span>' : '<span class="vw-stamp">Restored<small>JHB · 2026</small></span>';
+    root.innerHTML =
+      '<div class="gallery">' + plates + "</div>" +
+      '<div><div class="vw-spec">' +
+        '<p class="eyebrow">' + e(window.VUWANI_ARCHIVE.drop) + " · Batch " + e(g.batch) + "</p>" +
+        '<h1 class="title">' + e(g.name) + "</h1>" +
+        '<p class="vw-flourish">restored by hand, worn with intent</p>' +
+        '<hr class="vw-stitch">' +
+        '<p style="margin-top:var(--space-4)">' + e(g.story) + "</p>" +
+        "<dl>" + rows + "</dl>" +
+        '<div class="vw-spec-price"><span' + (g.status === "sold" ? ' class="muted"' : '') + '>' + V.rand(g.price) + "</span>" + action + "</div>" +
+      "</div>" +
+      '<div class="provenance">' +
+        '<div class="vw-tag"><div class="vw-tag-brand">VUWANI</div><div class="vw-tag-sub">Style Archive of South African Tailoring</div>' +
+          "<dl><dt>ERA</dt><dd>" + e(g.era) + "</dd><dt>FOUND</dt><dd>" + e(g.found) + "</dd><dt>LINING</dt><dd>" + e(g.lining) + "</dd><dt>RESTORED</dt><dd>" + e(g.ledger[g.ledger.length - (g.status === "sold" ? 2 : 1)][0]) + "</dd></dl>" +
+          '<div class="vw-tag-no">NO. ' + e(g.id) + " / 030</div></div>" +
+        '<div class="vw-card"><div class="vw-card-head"><b>' + e(window.VUWANI_ARCHIVE.drop.toUpperCase()) + '</b><span class="vw-record-sm">BATCH ' + e(g.batch) + "</span></div>" +
+          '<div class="vw-card-title">' + e(g.name) + "</div>" +
+          '<table><thead><tr><th>DATE</th><th>ENTRY</th></tr></thead><tbody>' + ledger + "</tbody></table>" + stamp + "</div>" +
+      "</div></div>";
+  })();
+</script>
+</body>
+</html>

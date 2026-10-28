@@ -1,0 +1,126 @@
+/* Vuwani Archive site. Colours, type and spacing come from brand/tokens.css. */
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--ground); color: var(--ink); font: 400 16px/26px var(--font-sans); }
+img { max-width: 100%; display: block; }
+a { color: var(--rust); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding-left: max(var(--space-4), env(safe-area-inset-left, 0px)); padding-right: max(var(--space-4), env(safe-area-inset-right, 0px)); }
+@media (min-width: 720px) { .wrap { padding-left: var(--space-12); padding-right: var(--space-12); } }
+
+/* Header */
+.site-head { border-bottom: var(--stroke-hair) solid var(--rule); }
+.site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: var(--space-6); padding-block: var(--space-4); flex-wrap: wrap; }
+.brand-link { color: var(--ink); text-decoration: none; display: inline-flex; align-items: baseline; gap: var(--space-3); }
+.brand-link b { font: 800 32px/1 var(--font-stencil); letter-spacing: .06em; }
+.brand-link span { font: italic 400 13px/1 var(--font-display); color: var(--ink-muted); }
+@media (max-width: 560px) { .brand-link span { display: none; } }
+.site-nav { display: flex; gap: var(--space-6); flex-wrap: wrap; }
+.site-nav a { font: 600 12px/16px var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink); text-decoration: none; padding-block: var(--space-1); border-bottom: var(--stroke-hair) solid transparent; }
+.site-nav a:hover, .site-nav a[aria-current="page"] { border-bottom-color: var(--rust); color: var(--rust); }
+
+/* Type */
+.eyebrow { font: 600 12px/16px var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-muted); margin: 0; }
+.hero-line { font: 500 clamp(40px, 7vw, 76px)/1 var(--font-display); letter-spacing: -.015em; margin: var(--space-4) 0; text-wrap: balance; }
+.title { font: 500 clamp(30px, 4.4vw, 40px)/1.1 var(--font-display); letter-spacing: -.01em; margin: var(--space-2) 0; text-wrap: balance; }
+.heading { font: 500 26px/32px var(--font-display); margin: 0 0 var(--space-2); text-wrap: balance; }
+.flourish { font: italic 400 22px/30px var(--font-display); color: var(--ink-muted); margin: 0; }
+.lead { font-size: 19px; line-height: 30px; max-width: 34em; }
+.prose { max-width: 38em; }
+.prose p { margin: 0 0 var(--space-4); }
+.prose h2 { font: 500 26px/32px var(--font-display); margin: var(--space-12) 0 var(--space-3); }
+.stencil { font: 700 18px/20px var(--font-stencil); letter-spacing: .12em; text-transform: uppercase; }
+.muted { color: var(--ink-muted); }
+
+/* Sections */
+.section { padding-block: var(--space-12); }
+@media (min-width: 720px) { .section { padding-block: var(--space-16); } }
+.section + .section { border-top: var(--stroke-hair) solid var(--rule); }
+.section-head { display: flex; justify-content: space-between; align-items: end; gap: var(--space-4); flex-wrap: wrap; margin-bottom: var(--space-8); }
+.band { background: var(--coal); color: var(--bone); }
+.band .eyebrow, .band .flourish, .band .muted { color: var(--bone); opacity: .78; }
+.band a { color: var(--brass); }
+
+/* Hero */
+.hero { display: grid; gap: var(--space-8); align-items: center; padding-block: var(--space-12) var(--space-16); }
+@media (min-width: 900px) { .hero { grid-template-columns: 1.1fr .9fr; gap: var(--space-16); } }
+.hero-actions { display: flex; gap: var(--space-3); flex-wrap: wrap; margin-top: var(--space-6); }
+
+/* The skyline composition used where a photograph will go */
+.skyline { position: relative; aspect-ratio: 4 / 5; max-width: 100%; overflow: hidden; background: var(--slab); }
+.skyline i { position: absolute; bottom: 0; display: block; }
+.skyline .sk-stone { left: 4%; width: 30%; height: 62%; background: var(--concrete); }
+.skyline .sk-rust { left: 34%; width: 22%; height: 46%; background: var(--rust); }
+.skyline .sk-suit { right: 0; width: 42%; height: 100%; background: repeating-linear-gradient(90deg, var(--coal) 0 22px, var(--concrete) 22px 23px); }
+.skyline .sk-tag { right: 14%; bottom: 36%; width: 20%; height: 12%; background: var(--paper); border-radius: var(--radius-tag); }
+.skyline .sk-cuff { right: 6%; bottom: 6%; width: auto; height: auto; }
+[data-theme="dark"] .skyline .sk-suit { background: repeating-linear-gradient(90deg, var(--concrete) 0 22px, var(--coal) 22px 23px); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .skyline .sk-suit { background: repeating-linear-gradient(90deg, var(--concrete) 0 22px, var(--coal) 22px 23px); } }
+
+/* Grit and grace */
+.pair { display: grid; gap: var(--space-8); }
+@media (min-width: 720px) { .pair { grid-template-columns: 1fr 1fr; gap: var(--space-16); } }
+.pair .stencil { color: var(--rust); display: block; margin-bottom: var(--space-2); }
+.quote { font: italic 400 clamp(24px, 3.4vw, 34px)/1.25 var(--font-display); margin: 0; padding-block: var(--space-6); border-top: 4px double var(--brass); border-bottom: 4px double var(--brass); text-wrap: balance; }
+
+/* Garment grid */
+.grid { display: grid; gap: var(--space-8) var(--space-6); grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.item { color: inherit; text-decoration: none; display: grid; gap: var(--space-2); }
+.item .vw-plate { width: 100%; }
+.item .vw-plate-frame { transition: transform 160ms ease-out; }
+.item:hover .vw-plate-frame { transform: translateY(-2px); }
+.item-name { font: 500 20px/26px var(--font-display); margin: var(--space-1) 0 0; }
+.item-meta { display: flex; justify-content: space-between; gap: var(--space-3); font: 400 14px/20px var(--font-mono); color: var(--ink-muted); }
+.item-meta b { font-weight: 400; color: var(--ink); }
+.item .vw-stamp { justify-self: start; }
+.plate-fill { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; padding: var(--space-4); font: 400 12px/16px var(--font-mono); letter-spacing: .04em; color: var(--bone); }
+.plate-fill.cloth { background: repeating-linear-gradient(90deg, var(--cloth, var(--coal)) 0 18px, rgba(242,235,221,.28) 18px 19px); }
+
+/* Filters */
+.filters { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+.chip { font: 600 12px/16px var(--font-sans); letter-spacing: .12em; text-transform: uppercase; padding: var(--space-2) var(--space-3); border: var(--stroke-hair) solid var(--ink); background: transparent; color: var(--ink); cursor: pointer; border-radius: var(--radius-none); }
+.chip[aria-pressed="true"] { background: var(--coal); color: var(--bone); border-color: var(--coal); }
+
+/* Restoration steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); counter-reset: step; }
+.steps li { counter-increment: step; border-top: var(--stroke-stitch) dashed var(--brass); padding-top: var(--space-4); }
+.steps li::before { content: counter(step, upper-roman); font: 800 34px/1 var(--font-stencil); color: var(--rust); display: block; margin-bottom: var(--space-2); }
+.steps h3 { font: 500 22px/28px var(--font-display); margin: 0 0 var(--space-1); }
+.steps p { margin: 0; color: var(--ink-muted); }
+
+/* Garment page */
+.garment { display: grid; gap: var(--space-12); padding-block: var(--space-12); }
+@media (min-width: 900px) { .garment { grid-template-columns: 1.15fr .85fr; gap: var(--space-16); align-items: start; } }
+.gallery { display: grid; gap: var(--space-4); grid-template-columns: 1fr 1fr; }
+.gallery .vw-plate { width: 100%; }
+.gallery .vw-plate:first-child { grid-column: 1 / -1; }
+.provenance { display: flex; gap: var(--space-6); flex-wrap: wrap; align-items: flex-start; margin-top: var(--space-8); }
+.vw-spec { max-width: none; }
+.vw-spec dl { grid-template-columns: minmax(7em, 9em) 1fr; }
+.back-link { font: 600 12px/16px var(--font-sans); letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.note { font: 400 12px/16px var(--font-mono); letter-spacing: .04em; color: var(--ink-muted); }
+
+/* Inheritors */
+.inheritors { display: grid; gap: var(--space-8); align-items: center; }
+@media (min-width: 900px) { .inheritors { grid-template-columns: 1fr 1fr; } }
+
+/* Footer */
+.site-foot { background: var(--coal); color: var(--bone); padding-block: var(--space-12); }
+.site-foot .wrap { display: grid; gap: var(--space-8); }
+@media (min-width: 720px) { .site-foot .wrap { grid-template-columns: 1.4fr 1fr 1fr; } }
+.site-foot b { font: 800 44px/1 var(--font-stencil); letter-spacing: .06em; display: block; }
+.site-foot p { margin: var(--space-2) 0 0; opacity: .8; }
+.site-foot a { color: var(--bone); }
+.site-foot ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2); }
+.site-foot .eyebrow { color: var(--brass); margin-bottom: var(--space-3); }
+.site-foot .vw-cuff > i { box-shadow: inset 0 0 0 2px var(--brass), inset 0 0 0 3px var(--coal); }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Fixes to brand components in site context */
+a.vw-btn:not(.vw-btn-link) { text-decoration: none; }
+.vw-card { padding-bottom: var(--space-16); }
+.vw-card .vw-stamp { bottom: var(--space-4); }
+#featured { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+@media (min-width: 900px) { #featured { grid-template-columns: repeat(3, 1fr); } }

@@ -1,0 +1,87 @@
+/* Vuwani: generated from tokens.json by tools/build_tokens.py. Do not edit by hand. */
+:root {
+  --ground: #e2ded7;
+  --slab: #cfcac2;
+  --ink: #1a1612;
+  --ink-muted: #57514a;
+  --rule: #a9a298;
+  --concrete: #8b857d;
+  --coal: #1a1612;
+  --bone: #f2ebdd;
+  --rust: #963f1c;
+  --on-rust: #f2ebdd;
+  --brass: #8a6820;
+  --lining: #24493a;
+  --stamp: #9e2226;
+  --paper: #f2ebdd;
+  --paper-ink: #1a1612;
+  --paper-muted: #57514a;
+  --paper-accent: #963f1c;
+  --focus: #1a1612;
+  --shadow-paper: 0 1px 1px rgba(26,22,18,0.18), 0 10px 24px -12px rgba(26,22,18,0.45);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-none: 0px;
+  --radius-tag: 2px;
+  --radius-button: 9999px;
+  --stroke-hair: 1px;
+  --stroke-stitch: 1.5px;
+  --stroke-heavy: 3px;
+  --font-display: "Bodoni Moda", "Didot", "Bodoni 72", Georgia, serif;
+  --font-stencil: "Big Shoulders Stencil Display", "Impact", "Arial Narrow", sans-serif;
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Courier Prime", "Courier New", Courier, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --ground: #13100d;
+  --slab: #221d19;
+  --ink: #ede5d6;
+  --ink-muted: #a69d91;
+  --rule: #4a423a;
+  --concrete: #5f5952;
+  --coal: #0c0a08;
+  --bone: #f2ebdd;
+  --rust: #d0703b;
+  --on-rust: #13100d;
+  --brass: #cfa64e;
+  --lining: #6f9e86;
+  --stamp: #e5675f;
+  --paper: #ece3d2;
+  --paper-ink: #1a1612;
+  --paper-muted: #57514a;
+  --paper-accent: #963f1c;
+  --focus: #cfa64e;
+  --shadow-paper: 0 1px 1px rgba(0,0,0,0.5), 0 12px 28px -12px rgba(0,0,0,0.8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #13100d;
+  --slab: #221d19;
+  --ink: #ede5d6;
+  --ink-muted: #a69d91;
+  --rule: #4a423a;
+  --concrete: #5f5952;
+  --coal: #0c0a08;
+  --bone: #f2ebdd;
+  --rust: #d0703b;
+  --on-rust: #13100d;
+  --brass: #cfa64e;
+  --lining: #6f9e86;
+  --stamp: #e5675f;
+  --paper: #ece3d2;
+  --paper-ink: #1a1612;
+  --paper-muted: #57514a;
+  --paper-accent: #963f1c;
+  --focus: #cfa64e;
+  --shadow-paper: 0 1px 1px rgba(0,0,0,0.5), 0 12px 28px -12px rgba(0,0,0,0.8);
+  color-scheme: dark;
+}
