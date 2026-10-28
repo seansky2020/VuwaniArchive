@@ -10,6 +10,9 @@ The website for Vuwani, a thrift store and style archive of South African tailor
 | `archive.html` | Every garment in the drop, filterable by status |
 | `garment.html?id=0417` | One garment: plates, spec, archive tag and archive card |
 | `about.html` | The manifesto and fitting bookings |
+| `waitlist.html` | Pre-launch page: collects names and emails through Netlify Forms (form name `waitlist`) |
+| `waitlist-thanks.html` | Shown after someone joins |
+| `assets/img/waitlist/` | Photos for the waitlist page. See its README for file names |
 | `assets/js/garments.js` | The archive data. **The six entries in it are samples**: replace them with real pieces |
 | `assets/css/site.css` | Site layout |
 | `brand/` | The brand system: guidelines PDF, tokens, components, logos. See `brand/README.md` |
