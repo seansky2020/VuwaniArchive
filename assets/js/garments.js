@@ -1,120 +1,121 @@
 /*
   The archive. One entry per garment.
-  These six are SAMPLE entries to show the layout. Replace them with real pieces as they are restored.
+  The six pieces match the outfits in the campaign photographs. Names, cloth and photos describe what is in the pictures.
+  Era, source market, measurements, prices, status and the ledger are still SAMPLE values: replace them with the real details.
   status: "available" | "reserved" | "sold"
   cloth: a colour for the placeholder plate until photographs exist.
-  photos: image paths under assets/img/, first one is the lead image. Leave empty to show the placeholder.
+  photos: image paths under assets/img/, first one is the lead image. Made by tools/make_images.py. Every photo shows the jacket on.
 */
 window.VUWANI_ARCHIVE = {
   drop: "Archive 001",
   garments: [
     {
       id: "0417",
-      name: "Jeppes Restored Wool Suit",
+      name: "Grey Two-Piece with Satin Trousers",
       batch: "04",
       era: "c. 1974",
-      cloth: "Navy chalk-stripe worsted, 340 g",
-      clothColour: "#1d2433",
+      cloth: "Grey wool jacket, charcoal satin trousers",
+      clothColour: "#5c5d60",
       found: "Dunusa, Bree Street",
-      work: "Shoulders rebuilt · relined in green silk · horn buttons",
+      work: "Shoulders rebuilt · trousers recut wide · horn buttons",
       lining: "Green silk",
       chest: "104 cm",
       waist: "86 cm · trouser cropped to 98 cm",
       price: 2450,
       status: "available",
-      story: "Found in a bale of coats on a Saturday morning. The cloth had outlived its owner and three cupboards. We rebuilt the shoulders, took out a tired polyester lining and put green silk in its place.",
-      ledger: [["12.09.2026", "Found · Dunusa"], ["20.09.2026", "Cleaned · hydrocarbon"], ["03.11.2026", "Restored · horn buttons"]],
-      photos: []
+      story: "A grey single-breasted jacket with the soft, wide shoulder of the late 70s, worn with satin trousers that catch the light. Shot against rusted corrugated iron with a patterned silk scarf where a tie should be.",
+      ledger: [["12.09.2026", "Found · Dunusa"], ["20.09.2026", "Cleaned · hydrocarbon"], ["03.11.2026", "Restored · shoulders rebuilt"]],
+      photos: ["assets/img/garments/0417-1.webp", "assets/img/garments/0417-2.webp", "assets/img/garments/0417-3.webp"]
     },
     {
       id: "0418",
-      name: "Selby Three-Piece in Charcoal",
+      name: "Navy Double-Breasted Jacket",
       batch: "04",
       era: "c. 1968",
-      cloth: "Charcoal flannel, 380 g",
-      clothColour: "#2e2c2a",
+      cloth: "Navy wool, six-button double-breasted",
+      clothColour: "#1d2433",
       found: "Noord Street market",
-      work: "Waistcoat let out · new brass buttons · trousers re-hemmed",
-      lining: "Oxblood satin",
+      work: "Sleeves shortened for a cuff to show · buttons polished · pocket square added",
+      lining: "Navy satin",
       chest: "100 cm",
       waist: "82 cm",
       price: 2950,
       status: "reserved",
-      story: "A full three-piece with the waistcoat still pinned to the jacket hanger. Heavy flannel built for winter mornings on the platform.",
-      ledger: [["14.09.2026", "Found · Noord Street"], ["22.09.2026", "Cleaned · wet clean"], ["06.11.2026", "Restored · brass buttons"]],
-      photos: []
+      story: "Six buttons and a chest that means business. Worn the old way: striped tie, gold tie chain, folded pocket square and a cufflink done up before leaving the house.",
+      ledger: [["14.09.2026", "Found · Noord Street"], ["22.09.2026", "Cleaned · wet clean"], ["06.11.2026", "Restored · sleeves shortened"]],
+      photos: ["assets/img/garments/0418-1.webp", "assets/img/garments/0418-2.webp"]
     },
     {
       id: "0419",
-      name: "Booysens Double-Breasted",
+      name: "Black Textured Sports Jacket",
       batch: "04",
       era: "c. 1979",
-      cloth: "Brown pinstripe wool",
-      clothColour: "#3b2a1f",
+      cloth: "Black and charcoal textured weave",
+      clothColour: "#232022",
       found: "Germiston market",
-      work: "Lapels pick-stitched by hand · sleeves shortened · relined",
-      lining: "Rust paisley",
+      work: "Relined · sleeves shortened · horn buttons fitted",
+      lining: "Black satin with red piping",
       chest: "108 cm",
       waist: "90 cm",
       price: 2700,
       status: "available",
-      story: "Six buttons, peak lapels and a chest that means business. We added hand pick stitching along the lapel edge and a rust paisley lining.",
-      ledger: [["18.09.2026", "Found · Germiston"], ["25.09.2026", "Cleaned · hydrocarbon"], ["09.11.2026", "Restored · pick stitch"]],
-      photos: []
+      story: "A textured black jacket that reads as plain from across the street and rich up close. Worn with a pale blue shirt, red tie and brown pleated trousers.",
+      ledger: [["18.09.2026", "Found · Germiston"], ["25.09.2026", "Cleaned · hydrocarbon"], ["09.11.2026", "Restored · relined"]],
+      photos: ["assets/img/garments/0419-1.webp", "assets/img/garments/0419-2.webp", "assets/img/garments/0419-3.webp"]
     },
     {
       id: "0420",
-      name: "Newtown Bakery Blazer",
+      name: "Olive Overcoat with Checked Lining",
       batch: "04",
       era: "c. 1983",
-      cloth: "Oatmeal tweed",
-      clothColour: "#6b5f4f",
+      cloth: "Olive wool overcoat, checked lining",
+      clothColour: "#4a4a26",
       found: "Dunusa, Bree Street",
-      work: "Elbows patched in suede · horn buttons · pockets reinforced",
-      lining: "Bottle green twill",
+      work: "Collar re-felted · lining repaired · buttons replaced",
+      lining: "Original check",
       chest: "102 cm",
       waist: "",
       price: 1650,
       status: "available",
-      story: "A tweed sports jacket that had seen work. We kept the wear and made it stronger: suede elbows, reinforced pockets, horn buttons.",
-      ledger: [["21.09.2026", "Found · Dunusa"], ["28.09.2026", "Cleaned · steam"], ["11.11.2026", "Restored · suede elbows"]],
-      photos: []
+      story: "A long olive overcoat with its original checked lining, worn over a waistcoat with a watch chain and wide brown trousers. The kind of coat that waited on Park Station platforms every winter.",
+      ledger: [["21.09.2026", "Found · Dunusa"], ["28.09.2026", "Cleaned · steam"], ["11.11.2026", "Restored · collar re-felted"]],
+      photos: ["assets/img/garments/0420-1.webp", "assets/img/garments/0420-2.webp", "assets/img/garments/0420-3.webp"]
     },
     {
       id: "0421",
-      name: "Park Station Overcoat",
+      name: "Brown Check Sports Jacket",
       batch: "04",
       era: "c. 1971",
-      cloth: "Camel wool and cashmere",
-      clothColour: "#7a5a33",
+      cloth: "Brown wool with a blue windowpane check",
+      clothColour: "#6b5a35",
       found: "Estate sale, Kensington",
-      work: "Collar re-felted · buttons replaced · hem restored",
-      lining: "Coal satin",
+      work: "Elbows reinforced · horn buttons · pockets restitched",
+      lining: "Bottle green twill",
       chest: "112 cm",
       waist: "",
       price: 3200,
       status: "sold",
-      story: "From a wardrobe that had not been opened since 1990. Camel coats like this one waited on Park Station platforms every winter.",
-      ledger: [["02.09.2026", "Found · estate sale"], ["10.09.2026", "Cleaned · hydrocarbon"], ["30.10.2026", "Restored · new collar felt"], ["15.11.2026", "Issued · Inheritor 0112"]],
-      photos: []
+      story: "Brown wool with a fine blue windowpane check. Worn with a black shirt, a bright silk tie and pleated stone trousers.",
+      ledger: [["02.09.2026", "Found · estate sale"], ["10.09.2026", "Cleaned · hydrocarbon"], ["30.10.2026", "Restored · elbows reinforced"], ["15.11.2026", "Issued · Inheritor 0112"]],
+      photos: ["assets/img/garments/0421-1.webp", "assets/img/garments/0421-2.webp", "assets/img/garments/0421-3.webp"]
     },
     {
       id: "0422",
-      name: "Jeppestown Grey Two-Piece",
+      name: "Navy Blazer and Pinstripe Trousers",
       batch: "04",
       era: "c. 1976",
-      cloth: "Mid-grey sharkskin",
-      clothColour: "#4a4c50",
+      cloth: "Navy wool blazer, black pinstripe trousers",
+      clothColour: "#1f2d55",
       found: "Noord Street market",
-      work: "Jacket shortened · waist taken in · relined",
+      work: "Blazer taken in · trousers re-hemmed · relined",
       lining: "Green silk",
       chest: "98 cm",
       waist: "80 cm · trouser cropped to 96 cm",
       price: 2250,
       status: "available",
-      story: "Sharkskin catches the light the way it did on Friday nights in 1976. Cut shorter in the jacket and cropped in the trouser for now.",
+      story: "A navy blazer against a pair of black pinstripe trousers, with a green and gold silk scarf knotted like a tie. Old pieces, worn like new ones.",
       ledger: [["23.09.2026", "Found · Noord Street"], ["30.09.2026", "Cleaned · wet clean"], ["12.11.2026", "Restored · relined"]],
-      photos: []
+      photos: ["assets/img/garments/0422-1.webp", "assets/img/garments/0422-2.webp", "assets/img/garments/0422-3.webp"]
     }
   ]
 };

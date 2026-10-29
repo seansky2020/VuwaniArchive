@@ -1,9 +1,9 @@
 # Waitlist photographs
 
-Generated from `photos/` by `tools/make_waitlist_images.py`, which crops and compresses each one. To swap a photo, change its source in that script and run:
+Generated from `photos/` by `tools/make_images.py`, which crops and compresses each one. To swap a photo, change its source in that script and run:
 
 ```bash
-python3 tools/make_waitlist_images.py
+python3 tools/make_images.py
 ```
 
 | File | Source | Where it shows |

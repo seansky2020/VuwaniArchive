@@ -53,10 +53,10 @@
       return;
     }
     document.title = g.name + " · Vuwani";
-    var plates = [
-      ["PLATE I", "FULL LENGTH"], ["PLATE II", "THE LINING"], ["PLATE III", "THE CUFF"]
-    ].map(function (p, i) {
-      return V.plate(g, '<figcaption><b>' + p[0] + '</b><span>' + p[1] + '</span></figcaption>', i);
+    var numerals = ["I", "II", "III", "IV", "V", "VI"];
+    var count = Math.max(1, g.photos.length);
+    var plates = numerals.slice(0, count).map(function (n, i) {
+      return V.plate(g, '<figcaption><b>PLATE ' + n + '</b><span>NO. ' + e(g.id) + '</span></figcaption>', i);
     }).join("");
     var rows = [["Era", g.era], ["Cloth", g.cloth], ["Found", g.found], ["Work done", g.work], ["Chest", g.chest], ["Waist", g.waist]]
       .filter(function (r) { return r[1]; })
