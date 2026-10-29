@@ -1,0 +1,13 @@
+# Keep the full-size originals in photos/ off the website.
+# They stay in the GitHub repo; the site uses the compressed crops in assets/img/.
+[[redirects]]
+  from = "/photos/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/photos"
+  to = "/404.html"
+  status = 404
+  force = true
