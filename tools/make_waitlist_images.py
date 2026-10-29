@@ -17,7 +17,7 @@ CROPS = [
     ("plate-street", "IMG_8891.webp", 0.50, 0.55, 1.00, 4 / 5, 900),
     ("plate-rust", "IMG_8920.webp", 0.50, 0.50, 1.00, 4 / 5, 900),
     ("plate-stance", "IMG_8910.webp", 0.50, 0.55, 1.00, 4 / 5, 900),
-    ("plate-bars", "IMG_8345.webp", 0.50, 0.50, 1.00, 4 / 5, 900),
+    ("plate-car", "IMG_8943.webp", 0.70, 0.50, 1.00, 4 / 5, 900),
 ]
 
 OUT.mkdir(parents=True, exist_ok=True)
